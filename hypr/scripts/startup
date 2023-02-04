@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+
+## Autostart Programs
+
+# start XFCE Polkit Agent
+/usr/lib/xfce-polkit/xfce-polkit &
+
+# set wallpaper using swww
+swww init && swww img ".config/hypr/wallpapers/wallpaper.jpg" &
+
+# fix webcord
+rm ~/.config/WebCord/windowState.json

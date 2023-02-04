@@ -1,0 +1,24 @@
+// Waybar config file
+{
+    "layer": "top",
+    "position": "top",
+    "mode": "dock", 	
+    "exclusive": true, 	
+    "passthrough": false,  	
+    "height": 30, 		
+    "width": "", 		
+    "spacing": 6, 		
+    "margin": 0, 		
+    "margin-top": 0, 	
+    "margin-bottom": 0, 
+    "margin-left": 0, 	
+    "margin-right": 0, 	
+    "fixed-center": true, 
+    "ipc": true,
+ 
+    // modules
+    "include": "~/.config/waybar/modules",
+    "modules-left": ["custom/menu", "tray", "cpu", "memory", "hyprland/window"],
+    "modules-center": ["wlr/workspaces"],
+    "modules-right": ["backlight", "network", "battery", "clock", "custom/power"]
+}

@@ -1,0 +1,157 @@
+// Waybar modules configuration
+{
+
+    // hyprland workspaces 
+    "wlr/workspaces": {
+        "format": "{icon}",
+        "on-click": "activate",
+        //"on-scroll-up": "hyprctl dispatch workspace e+1",
+        //"on-scroll-down": "hyprctl dispatch workspace e-1",
+        "format-icons": {
+            "1":"1",
+            "2":"2",
+            "3":"3"
+        },
+        "sort-by-number": true
+    },
+
+    // hyprland window name
+    "hyprland/window": {
+        "format": "➡ {}",
+        "separate-outputs": true
+    },
+      
+	// waybar-backlight
+    "backlight": {
+		"interval": 2,
+		"align": 0,
+		"rotate": 0,
+        //"device": "amdgpu_bl0",
+        "format": "{icon} {percent}%",
+        "format-icons": ["", "", "", ""],
+		// Commands to execute on events
+        "on-click": "",
+        "on-click-middle": "",
+        "on-click-right": "",
+        "on-update": "",
+        "on-scroll-up": "light -A 5%",
+        "on-scroll-down": "light -U 5%",
+        "smooth-scrolling-threshold": 1,
+    },
+
+	// waybar-battery
+    "battery": {
+		"interval": 60,
+		"align": 0,
+		"rotate": 0,
+		//"bat": "BAT1",
+		//"adapter": "ACAD",
+		"full-at": 100,
+		"design-capacity": false,
+        "states": {
+            "good": 95,
+            "warning": 20,
+            "critical": 10
+        },
+        "format": "{icon} {capacity}%",
+        "format-charging": " {capacity}%",
+        "format-plugged": " {capacity}%",
+        "format-full": "{icon} Full",
+        //"format-good": "",
+        "format-alt": "{icon} {time}",
+        "format-icons": ["", "", "", "", ""],
+        "format-time": "{H}h {M}min",
+        "tooltip": true,
+    },
+
+	// waybar-clock
+    "clock": {
+		"interval": 60,
+		"align": 0,
+		"rotate": 0,
+        //"timezone": "America/New_York",
+        "tooltip-format": "<big>{:%B %Y}</big>\n<tt><small>{calendar}</small></tt>",
+        "format": " {:%H:%M }",
+        "format-alt": " {:%a %b %d, %G}"
+    },
+
+	// waybar-cpu
+    "cpu": {
+         "interval": 5,
+         "format": " CPU {usage}%",
+    },
+           
+	// waybar-custom
+    "custom/menu": {
+         "format": "",
+         "tooltip": false,
+         "on-click": "$HOME/.config/hypr/scripts/menu",
+    },
+
+    // power menu
+    "custom/power": {
+         "format": "襤",
+         "tooltip": false,
+         "on-click": "$HOME/.config/hypr/scripts/wlogout",
+    },         	
+	
+	// waybar-memory
+    "memory": {
+         "interval": 10,
+         "format": " RAM {used:0.1f}G",
+    },
+
+	// waybar-network
+    "network": {
+		"interval": 5,
+        //"interface": "wlan*", // (Optional) To force the use of this interface, set it for netspeed to work
+        "format-wifi": " {essid}",
+        "format-ethernet": " {ipaddr}/{cidr}",
+        "format-linked": " {ifname} (No IP)",
+        "format-disconnected": "睊 Déconnecté",
+        "format-disabled": "睊 Disabled",
+        "format-alt": " {bandwidthUpBits} |  {bandwidthDownBits}",
+        "tooltip-format": " {ifname} via {gwaddr}",
+    },
+
+	// wireplumber
+    "wireplumber": {
+        //"format": "{volume}% {icon} {format_source}",
+        "format": "{icon} {volume}%",
+        "format-muted": " Mute",
+        "format-bluetooth": " {volume}% {format_source}",
+        "format-bluetooth-muted": " Mute",
+        "format-source": " {volume}%",
+        "format-source-muted": "",
+        "format-icons": {
+            "headphone": "",
+            "hands-free": "",
+            "headset": "",
+            "phone": "",
+            "portable": "",
+            "car": "",
+            "default": ["", "", ""]
+        },
+        "scroll-step": 5.0,
+		// Commands to execute on events
+        "on-click": "pactl set-sink-mute @DEFAULT_SINK@ toggle",
+        "on-click-right": "pactl set-sink-mute @DEFAULT_SINK@ toggle",
+        "smooth-scrolling-threshold": 1,
+    },
+
+	// waybar-idle-inhibitor
+    "idle_inhibitor": {
+         "format": "{icon}",
+         "format-icons": {
+             "activated": "",
+             "deactivated": ""
+         },
+         "timeout": 30
+    },
+
+	// waybar-tray
+    "tray": {
+        "icon-size": 16,
+        "spacing": 10
+    }
+}

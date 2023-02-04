@@ -1,0 +1,30 @@
+{
+    "label" : "lock",
+    "text" : "Verrouiller",
+    "action" : "swaylock",
+    "keybind" : "l"
+}
+{
+    "label" : "logout",
+    "text" : "Se déconnecter",
+    "action" : "hyprctl dispatch exit 0",
+    "keybind" : "e"
+}
+{
+    "label" : "suspend",
+    "text" : "Mettre en veille",
+    "action" : "systemctl suspend",
+    "keybind" : "u"
+}
+{
+    "label" : "reboot",
+    "text" : "Redémarrer",
+    "action" : "systemctl reboot",
+    "keybind" : "r"
+}
+{
+    "label" : "shutdown",
+    "text" : "Éteindre",
+    "action" : "systemctl poweroff",
+    "keybind" : "s"
+}
