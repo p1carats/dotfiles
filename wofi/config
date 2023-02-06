@@ -3,7 +3,7 @@ show=drun
 prompt=Spotlight
 normal_window=true
 layer=top
-term=foot
+term=kitty
 
 # geometry
 width=500px
