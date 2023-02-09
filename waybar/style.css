@@ -2,7 +2,7 @@
 
 /* fonts */
 * {
-  font-family: "JetBrains Mono", "Iosevka Nerd Font", sans-serif;
+  font-family: "JetBrains Mono", "Iosevka Nerd Font";
   font-size: 13px;
   color: @text;
   min-height: 0;
@@ -45,18 +45,25 @@ window#waybar.hidden {
 }
 
 /* icons */
+#custom-menu,
+#custom-power,
 #tray,
-#network,
-#backlight,
-#clock,
-#battery,
+#window,
+#workspaces,
 #wireplumber,
-#custom-lock,
-#custom-power {
+#backlight,
+#network,
+#battery,
+#clock {
   background-color: @surface0;
   margin: 6px 0px;
   padding: 5px 10px 5px 10px;
   border-radius: 1rem;
+}
+
+#cpu,
+#memory {
+  background-color: @surface0;
 }
 
 /* clock */
@@ -77,12 +84,27 @@ window#waybar.hidden {
   color: @red;
 }
 
-/* brightness */
+@keyframes blink {
+  to {
+      color: @rosewater;
+  }
+}
+
+#battery.critical:not(.charging) {
+  color: @red;
+  animation-name: blink;
+  animation-duration: 0.5s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+}
+
+/* Brightness */
 #backlight {
   color: @yellow;
 }
 
-/* sound */
+/* Sound */
 #wireplumber {
   color: @pink;
 }
@@ -92,7 +114,7 @@ window#waybar.hidden {
 }
 
 #wireplumber.muted {
-    color: @red;
+    color: @maroon;
 }
 
 /* network */

@@ -17,8 +17,8 @@ width=300
 height=100
 margin=20
 padding=15
-border-size=4
-border-radius=12
+border-size=2
+border-radius=10
 icons=1
 max-icon-size=48
 icon-location=left
@@ -33,9 +33,9 @@ layer=overlay
 anchor=top-right
 
 background-color=#1e1e2e
-text-color=#d9e0ee
-border-color=#313244
-progress-color=over #89b4fa
+text-color=#cdd6f4
+border-color=#89b4fa
+progress-color=over #313244
 
 [urgency=low]
 border-color=#313244
